@@ -1,67 +1,61 @@
 article, aside, figure, footer, header, nav, section {
     display: block;
 }
+* {
+	margin: 0;
+	padding: 0;
+}
 body {
 	font-family: Arial, Helvetica, sans-serif;
-	width: 500px;
+	font-size: 85%;
 	margin: 0 auto;
-    padding: 20px;
-    border: 3px solid blue;
+	padding: 20px;
+	width: 570px;
+	height: 580px;
+	border: 3px solid blue;
 }
 h1 {
-	background: #dfe3e6 url('images/bullet.gif') no-repeat 7px center;
-	margin: 0;
-	padding: 3px 0 3px 25px;
-	border: solid blue 1px;
-	color: blue;
-}
-
-ul {
-	overflow: hidden;
+	margin-top: 0;
+	margin-bottom: .3em;
 	padding: 0;
-	margin-top: 7px;
-	margin-bottom: 10px;
-	text-align: center;
+	font-size: 140%;
 }
-ul li {
-	list-style: none;
-	margin: 0;
-	width:220px;
+h2 {
+	font-size: 110%;
+	margin-top: 0;
+	margin-bottom: 1em;
 }
-.bx-wrapper {
-	margin: 0 auto;
+ul {
+	list-style-type: none;
 }
-.bx-prev {
-	position: absolute;
-	top: 77px;
-	left: -35px;
-	width: 31px;
-	height: 31px;
-	text-indent: -999999px;
-	background: url(images/icon_arrow_left.png) no-repeat 0 -31px;
-}
-.bx-next {
-	position: absolute;
-	top: 77px;
-	right: -35px;
-	width: 31px;
-	height: 31px;
-	text-indent: -999999px;
-	background: url(images/icon_arrow_right.png) no-repeat 0 -31px;
-}
-.bx-next: hover,
-.bx-prev: hover {
-	background-position: 0 0;
-}
-#caption, #pager {
-	color: blue;
-	font-size: 90%;
-	text-align: center;
-}
-#caption {
-	font-weight: bold;	
+li {
 	margin-bottom: 0;
 }
-#pager {
-	margin-top: 0;
+img {
+	margin-right: 10px;
+}
+.small {
+	width: 0;
+	height: 0;
+}
+.large {
+	width: 300px;
+	height: 375px;
+}
+.hidden {
+	display: none;
+}
+#book_list li {
+	display: inline;
+}
+#book_list {
+	margin-bottom: 1.2em;
+}
+#book_image {
+	float: left;
+	width: 290px;
+}
+#book_desc {
+	float: right;	
+	width: 240px;
 }
