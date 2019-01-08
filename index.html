@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>jQuery UI Effects</title>
+    <!-- jQuery UI style sheet reference. Smoothness is the theme used. -->
+    <link href="css/smoothness/jquery-ui-1.8.23.custom.css" type="text/css" rel="stylesheet">    
+	<!-- Normal style sheet used for layout and general formatting. -->
+    <link href="styles.css" type="text/css" rel="stylesheet">
+    <!-- HTML5 shim/shiv for HTML5 section element backward compatibility. -->
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <!-- jQuery UI JavaScript library reference. -->
+    <script type="text/javascript" src="js/jquery-ui-1.8.23.custom.min.js"></script>
+	<script> 
+		$(document).ready(function() {
+			$("#book_list a").click(function() {
+				var description = $(this).next().html();
+				var source = $(this).children("img").attr("src");
+				var alt = $(this).children("img").attr("alt");
+				
+				//hides the description to the right
+				//then shows the description from the right
+				$("#book_desc ").hide( "slide", { direction: "right"  }, 500, function() {
+					$("#book_desc p").html(description);
+					$("#book_desc ").show( "slide", { direction: "right"  }, 500 );
+					
+					//change image from large to small
+					//then the image from small to large
+					$('#book_image img').removeClass("large").addClass("small", 1000, function() {
+						$("#book_image img").attr("src", source);
+						$("#book_image img").attr("alt", alt);
+						$('#book_image img').removeClass("small").addClass("large", 1000); 
+						
+						
+					});
+					
+				});
+			}) 
+		});
+    </script>
+</head>
+
+<body>
+	<section>
+   		<h1>Current Book List</h1>
+   		<h2>Click on a book for more information</h2>  
+    	<div>
+    		<ul id="book_list">
+    			<li>
+        			<a><img src="images/book1.jpg" alt="SQL Server 2012 for Developers" height="125" width="100"></a>
+        			<p class="hidden">When it comes to querying and working with SQL Server databases, 
+        			most .NET developers squeak by with minimal knowledge, never realizing all the 
+        			power they're missing out on. But this 2012 edition of our popular SQL Server 
+        			book boosts your SQL skills in a way that makes you a more effective, efficient, 
+        			and confident developer...whether you're issuing queries, using powerful database 
+        			features like stored procedures, triggers, or functions, or designing and creating 
+        			database tables. A valuable guide for any .NET developer.</p>
+    			</li>
+    			<li>
+          			<a><img src="images/book2.jpg" alt="PHP and MySQL" height="125" width="100"></a>
+          			<p class="hidden">PHP and MySQL are two of today's most popular,open-source tools for  
+          			server-side web programming. And with this book, you'll learn right from the start how to   
+          	 		use them together, the way the pros do. In fact, you'll create a database-driven 
+          	 		web site that implements the MVC pattern in the first 6 chapters! Then, you'll be 
+          	 		able to build out your PHP and MySQL skills to the professional level as quickly 
+          	 		as you want.</p>		
+    			</li>
+    			<li>
+          			<a><img src="images/book3.jpg" alt="HTML5 and CSS3" height="125" width="100"></a>
+          			<p class="hidden">HTML5 and CSS3 are changing how web pages are developed 
+          			in some exciting new ways! The trick is learning how to use this new 
+          			functionality as quickly, as easily, and as sensibly as possible. That's 
+          			where this latest edition of our HTML and CSS book comes in. It integrates 
+          			the HTML5/CSS3 features that are widely implemented today with the classic 
+          			features you still need. Whether you're new to web development...or whether 
+          			you're an experienced web developer who's been frustrated by the slow pace 
+          			and gaping  holes in the other training you've tried...this book is for YOU.</p> 
+    			</li>
+    			<li>
+           			<a><img src="images/book4.jpg" alt="JavaScript and DOM Scripting" height="125" width="100"></a>
+           			<p class="hidden">Today, you can provide a great user experience by designing your 
+           			web pages the right way (see our HTML5 book) and by using JavaScript on the client 
+           			side to deliver fast, customized content...regardless of what programming's done 
+           			on the server side. So our JavaScript book shows you how to add some pizzazz 
+           			to your web pages. Fast-paced, professional, and packed with expert 
+           			practices, it guides you through each step as you learn how to script sites 
+           			that enhance the user experience and ensure browser compatibility.</p>  		
+    			</li>
+    			<li>
+           			<a><img src="images/book5.jpg" alt="Java Programming" height="125" width="100"></a>
+           			<p class="hidden">Since 2001, programmers have been using our core Java book to master 
+           			the skills they use every day in developing desktop and web applications. 
+           			Now, you can train yourself in Java by using the current edition of that book, 
+           			Murach's Java Programming. It’s the one	core Java book we’ve seen that presents 
+           			object-oriented features in a way that's both understandable and useful in the 
+           			real world. And because no professional Java developer should miss out on the 
+           			productivity features that are built into today's free IDEs, this edition shows you 
+           			how to use NetBeans to create, compile, test, and run Java applications, right 
+           			from chapter 1.</p>      				
+    			</li>
+    		</ul>
+        </div>
+        <div id="book_image">
+       		<img src="images/book1.jpg" alt="SQL Server 2012 for Developers" height="375" width="300">
+       	</div>
+       	<div id="book_desc">
+        	<p>When it comes to querying and working with SQL Server databases, 
+        	most .NET developers squeak by with minimal knowledge, never realizing all the 
+        	power they're missing out on. But this 2012 edition of our popular SQL Server 
+        	book boosts your SQL skills in a way that makes you a more effective, efficient, 
+        	and confident developer...whether you're issuing queries, using powerful database 
+        	features like stored procedures, triggers, or functions, or designing and creating 
+        	database tables. A valuable guide for any .NET developer.</p>
+        	</ul>
+        </div>
+    </section>
+</body>
+</html>
